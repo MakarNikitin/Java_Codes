@@ -1,9 +1,9 @@
 public class Vip {
-    public void calculatorVip(double bodyCredit, double monthPay, double percent) {
+    public void calculatorVip(double bodyCredit, double monthPay, double percent) throws Exception {
         double result = 0;
         double counter;
         if ((monthPay * 12 < (bodyCredit * (percent / 100))) || bodyCredit < 0) {
-            System.out.println("throws Exception");
+            throw new Exception("Вы не сможете выплатить кредит");
         } else {
             while (bodyCredit - monthPay * 12 > 0) {
                 bodyCredit = (bodyCredit - monthPay * 12);
